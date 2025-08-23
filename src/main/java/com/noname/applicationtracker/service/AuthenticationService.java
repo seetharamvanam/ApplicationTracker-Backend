@@ -7,6 +7,7 @@ import com.noname.applicationtracker.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,6 +15,11 @@ public class AuthenticationService {
 
     @Autowired
     private UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+
+    public AuthenticationService(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
 
     public ResponseEntity<String> registerUser(UserDTO userDTO) throws Throwable{
         User newUser = new User();
@@ -40,13 +46,14 @@ public class AuthenticationService {
             throw new IllegalArgumentException("Last Name not provided...");
         }
         if (userDTO.getPassword()!=null){
-            newUser.setPassword(userDTO.getPassword());
+            String encodedPassword = passwordEncoder.encode(userDTO.getPassword());
+            newUser.setPassword(encodedPassword);
         }else{
             throw new IllegalArgumentException("Password field is empty...");
         }
 
         userRepository.save(newUser);
         return new ResponseEntity<>("User Registered Successfully!!", HttpStatus.CREATED);
-        //TODO: Implement password encryption for user registration.
+
     }
 }
