@@ -1,6 +1,6 @@
-package com.noname.ApplicationTracker.service;
+package com.noname.applicationtracker.service;
 
-import com.noname.ApplicationTracker.dto.HealthDTO;
+import com.noname.applicationtracker.dto.HealthDTO;
 import org.springframework.stereotype.Service;
 
 @Service
