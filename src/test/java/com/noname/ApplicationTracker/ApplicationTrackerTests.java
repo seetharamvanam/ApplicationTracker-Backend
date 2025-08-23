@@ -8,6 +8,7 @@ class ApplicationTrackerTests {
 
 	@Test
 	void contextLoads() {
+		//TODO: ADD TESTS IN FUTURE
 	}
 
 }
