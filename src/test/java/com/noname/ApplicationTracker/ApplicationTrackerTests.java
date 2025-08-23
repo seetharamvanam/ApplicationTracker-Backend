@@ -1,4 +1,4 @@
-package com.noname.applicationtracker;
+package com.noname.ApplicationTracker;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,6 +8,7 @@ class ApplicationTrackerTests {
 
 	@Test
 	void contextLoads() {
+		//TODO: ADD TESTS IN FUTURE
 	}
 
 }

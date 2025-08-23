@@ -1,4 +1,4 @@
-package com.noname.applicationtracker;
+package com.noname.ApplicationTracker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

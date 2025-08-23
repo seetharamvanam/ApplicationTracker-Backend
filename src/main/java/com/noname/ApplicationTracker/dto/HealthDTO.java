@@ -1,4 +1,4 @@
-package com.noname.applicationtracker.dto;
+package com.noname.ApplicationTracker.dto;
 
 public class HealthDTO {
     private String status;
